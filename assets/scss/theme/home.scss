@@ -1,0 +1,280 @@
+$primary-color: #ffc87a;
+$text-color: #1a2b5f;
+$text-grey: #8f98b1;
+html {
+  font-size: 62.5%; //1rem = 10px;
+  font-family: "Poppins", sans-serif;
+}
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+  &:hover {
+    color: $primary-color;
+  }
+}
+body {
+  padding-bottom: 40px;
+  line-height: 20px;
+  color: $text-color;
+}
+img {
+  display: block;
+  max-width: 100%;
+}
+//max screen: 1440;
+.wrapper {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+//max container includes content: 1170px, nhung do padding 40 nen cong vao 1210
+
+.container {
+  margin: 0 auto; //margin
+  max-width: 1210px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+}
+.wrap {
+  flex-wrap: wrap;
+}
+.align-item {
+  align-items: baseline;
+}
+.logo {
+  font-size: 25px;
+  font-weight: 600;
+  color: $text-color;
+  &__text {
+    color: $primary-color;
+  }
+}
+.header {
+  padding-top: 42px;
+  &__menu-item {
+    font-size: 18px;
+    margin-left: 52px;
+    &:last-child {
+      margin-left: 72px;
+    }
+  }
+  &__menu-link {
+    transition: color 0.25s linear, border 0.25s linear;
+    &:hover {
+      color: $primary-color;
+    }
+  }
+  &__login {
+    border: 1px solid currentColor;
+    border-radius: 25px;
+    padding: 10px 28px;
+    text-align: center;
+  }
+}
+
+.banner {
+  padding-top: 166px;
+  max-width: 600px; //set max-width cho contents so they can xuong dong
+  margin: 0 auto; //set center for contents
+  text-align: center; //
+  &__title {
+    font-size: 50px;
+    font-weight: 600;
+    color: $text-color;
+    margin-bottom: 20px;
+  }
+  &__decs {
+    font-size: 18px;
+    color: #8f98b1;
+    line-height: 24px;
+  }
+  &__btn {
+    margin-top: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    &-buy {
+      margin-left: 20px;
+      border: none;
+      background: $primary-color;
+      font-weight: 500;
+      box-shadow: 0 10px 35px -5px #ffc87a;
+      &:hover {
+        color: #fff;
+      }
+    }
+  }
+}
+.category {
+  &__list {
+    margin-top: 180px;
+  }
+
+  &__item {
+    width: calc(25%-22.5px);
+    padding: 25px;
+    background-color: #fff;
+
+    border-radius: 20px;
+    &:first-child {
+      box-shadow: 0 10px 35px -5px #ff7ac144;
+    }
+    &:nth-child(2) {
+      box-shadow: 0 10px 35px -5px #ff7b6a44;
+      object-fit: cover;
+    }
+    &:nth-child(3) {
+      box-shadow: 0 10px 35px -5px #7abcff5e;
+    }
+    &:last-child {
+      box-shadow: 0 10px 35px -5px #ff997a57;
+    }
+
+    &-image {
+      width: 211px;
+      height: 228px;
+      border-radius: 20px;
+      margin-bottom: 42px;
+      //object-fit: cover;
+    }
+    &-title {
+      font-size: 22px;
+      font-weight: 500;
+      padding-bottom: 20px;
+    }
+    &-link {
+      color: #8f98b1;
+    }
+  }
+}
+
+.feature {
+  &__decoration {
+    text-decoration: underline;
+  }
+  padding-top: 180px;
+  .items {
+    margin-top: 155px;
+  }
+  &__image {
+    width: 570px;
+    background: #fff;
+    border-radius: 30px;
+    &:first-child {
+      margin-right: 100px;
+    }
+    &:nth-child(2) {
+      margin-left: 100px;
+    }
+  }
+  &__info {
+    margin-top: 96px;
+    font-size: 14px;
+    &-title {
+      font-size: 40px;
+      font-weight: 500;
+      line-height: 50px;
+    }
+    &-decs {
+      margin-top: 32px;
+      color: $text-grey;
+      line-height: 18px;
+    }
+    &-text {
+      margin-top: 32px;
+      margin-bottom: 46px;
+      font-weight: 500;
+      i {
+        margin-right: 25px;
+        font-size: 20px;
+      }
+    }
+    &-list {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+    }
+    &-service {
+      padding-right: 60px;
+      width: calc(50% - 30px);
+      i {
+        padding: 12px;
+        align-items: center;
+        margin-top: 42px;
+        font-size: 20px;
+        width: 46px;
+        height: 46px;
+        border-radius: 10px;
+
+        background-color: #d3e9cb;
+        color: #a8d9e4;
+      }
+      h2 {
+        margin-top: 18px;
+        font-weight: 500;
+      }
+      p {
+        margin-top: 18px;
+        color: $text-grey;
+      }
+    }
+  }
+}
+//nếu ndung quá dài, chỉ cho nội dung hiển thị 2 hàng
+.text-clamp {
+  display: -webkit-box;
+  -webket-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  &--2 {
+    -webkit-line-clamp: 2;
+  }
+}
+
+.partners {
+  padding-top: 198px;
+  max-width: 782px;
+  margin: 0 auto;
+  text-align: center;
+  &__title {
+    font-size: 25px;
+    font-weight: 500;
+    padding-bottom: 78px;
+    border-bottom: 2px solid #1a2b5f;
+  }
+  &__pic {
+    display: flex;
+    margin-top: 68px;
+    justify-content: space-between;
+  }
+}
+.connect {
+  margin-top: 198px;
+  text-align: center;
+  &__title {
+    font-size: 28px;
+    margin-bottom: 45px;
+  }
+  &__desc {
+    font-size: 18px;
+    font-weight: 500;
+    a {
+      color: $primary-color;
+    }
+  }
+  &__pics {
+    margin-top: 45px;
+    margin-bottom: 178px;
+  }
+}
+
+
